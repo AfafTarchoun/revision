@@ -95,9 +95,7 @@ int ft_printf(const char *str, ...)
         if(str[i] == '%' && ft_check(str[i++]) == 1)
         {
             i++;
-            if(str == '\0')
-                return(len);
-            len +=check(str[i], list);
+            len +=check(str[--i], list);
         }
         else
             len+=ft_putchar(str[i]);
